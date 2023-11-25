@@ -1,0 +1,68 @@
+*{
+    /* outline: 2px solid green; */
+}
+.banner-header {
+    height: 100%;
+}
+
+.banner {
+    width: 100%;
+    height: 85vh;
+    font-size: clamp(50px, 10vw, 110px);
+    color: whitesmoke;
+    background: linear-gradient(225deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 0.7679446778711485) 32%, rgba(9, 9, 120, 0.7091211484593838) 48%, rgba(118, 7, 201, 0.21612394957983194) 100%), url('./homepage/maldives.jpg')
+}
+
+.homepage2-card-container {
+    width: 350px;
+    height: 410px;
+    border-radius: 20px;
+}
+
+.homepage2-card-container img {
+    border-radius: 20px;
+}
+
+.nav-2 {
+    height: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.navvariable h1 {
+    width: 100%;
+
+    border-radius: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: clamp(10px, 8vw, 20px);
+
+}
+
+.custom-title {
+    font-size: clamp(40px, 8vw, 70px);
+}
+
+.homepagepart3-container {
+    /* width: 100%;
+    height: 100%; */
+    background-image: url("./homepage/4873.jpg");
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+
+    overflow:hidden ;
+    object-fit: cover;
+}
+.personprofile-img-container img{
+    border-radius: 20px;
+}
+.hambargur{
+    width: 100%;
+    height: 80%;
+}
