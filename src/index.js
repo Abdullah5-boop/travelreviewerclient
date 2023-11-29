@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
+import app from './Firebase.init';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Login from './component/Login/Login';
@@ -10,7 +11,7 @@ import HotelProfil from './component/Profile/HotelProfile/HotelProfil';
 import PersonDashbord from './component/Profile/Personprofile/PersonDashbord';
 import Homepage from './component/homepage/Homepage';
 
-
+import { getAuth } from "firebase/auth";
 
 const router = createBrowserRouter([
   {
@@ -22,28 +23,34 @@ const router = createBrowserRouter([
     element: <SignUp></SignUp>,
   },
   {
-    path: "/hotel",
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/login/:email",
+    element: <Login></Login>,
+  },
+  {
+    path: "hotel/:id",
     element: <HotelProfil></HotelProfil>,
   },
   {
     path: "/PersonDashbord",
     element: <PersonDashbord></PersonDashbord>,
   },
-  {
-    path: "/Login",
-    element: <SignUp></SignUp>,
-  },
+
   {
     path: "user/:userid",
     element: <div>hello this is user page</div>,
   },
 ]);
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <RouterProvider router={router} />
 
   </React.StrictMode>
 );

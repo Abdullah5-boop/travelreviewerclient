@@ -7,13 +7,19 @@ const Homepagepart3 = () => {
 
 
     const [tabledata, settabledata] = useState([])
-   
+
     const reqfortableData = (clickcountry) => {
+        console.log(clickcountry)
         let url = `http://localhost:5000/country/${clickcountry}`
         fetch(url)
             .then(res => res.json())
             .then(data => settabledata(data))
- 
+
+    }
+    const takealook = (id) => {
+        let takelookobj = tabledata.find(e => e.hrid === id)
+        console.log(takelookobj)
+
     }
 
 
@@ -70,7 +76,7 @@ const Homepagepart3 = () => {
                         </div>
                         <div className='table-container col-span-4 	 '>
 
-                            <Table tabledata={tabledata}></Table>
+                            <Table tabledata={tabledata} takealook={takealook}></Table>
                         </div>
                     </div>
                 </div>

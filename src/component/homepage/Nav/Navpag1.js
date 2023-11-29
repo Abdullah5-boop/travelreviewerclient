@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Navpag1 = () => {
     const [hambarguron, sethambarguron] = useState(false)
-    console.log(hambarguron)
+  
     const testing = () => {
         console.log("button is clicked")
     }
@@ -15,7 +15,7 @@ const Navpag1 = () => {
             <li>Nav3</li>
             <li><Link to={`/PersonDashbord`}>Hotel</Link></li>
             <li><Link to={`/hotel`}>Dashbord</Link></li>
-            <li><Link to={`/Login`}>Login</Link></li>
+            <li><Link to={`/login`}>Login</Link></li>
             <li><Link to={`/signup`}>Sign up</Link></li>
         </ul>
     </>
