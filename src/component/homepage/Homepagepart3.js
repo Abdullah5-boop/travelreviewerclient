@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Table from './Table';
 import '../component.css'
+import auth from '../../Firebase.init';
 
 const Homepagepart3 = () => {
+
 
 
     const [tabledata, settabledata] = useState([])

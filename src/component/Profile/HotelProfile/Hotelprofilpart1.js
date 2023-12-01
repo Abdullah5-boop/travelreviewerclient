@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Hotelprofilpart1 = ({hoteldata}) => {
-    const HotelName =hoteldata[0]?.hotelname
-    const hotelPrice =hoteldata[0]?.price;
-    const hotelLocation=hoteldata[0]?.hrlocation;
-    const hotelstaticinfo={HotelName,hotelPrice,hotelLocation}
-    console.log(hotelstaticinfo)
-  
+const Hotelprofilpart1 = ({ hoteldata }) => {
+    const HotelName = hoteldata[0]?.hotelname
+    const hotelPrice = hoteldata[0]?.price;
+    const hotelLocation = hoteldata[0]?.hrlocation;
+    const hotelstaticinfo = { HotelName, hotelPrice, hotelLocation }
+
+
     return (
         <>
             <div className='m-0 lg:mx-24 pt-10 lg:mb-10 grid grid-cols-1 lg:grid-cols-5'>

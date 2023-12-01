@@ -12,6 +12,8 @@ import PersonDashbord from './component/Profile/Personprofile/PersonDashbord';
 import Homepage from './component/homepage/Homepage';
 
 import { getAuth } from "firebase/auth";
+import Blog from './component/Other/Blog/Blog';
+import ABoutUspage from './component/Other/About/ABoutUspage';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
   {
     path: "/PersonDashbord",
     element: <PersonDashbord></PersonDashbord>,
+  },
+  {
+    path: "/blog",
+    element: <Blog></Blog>,
+  },
+  {
+    path: "/about",
+    element: <ABoutUspage></ABoutUspage>,
   },
 
   {

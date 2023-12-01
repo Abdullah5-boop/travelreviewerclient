@@ -1,22 +1,54 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import auth from '../../../Firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Navpag1 = () => {
     const [hambarguron, sethambarguron] = useState(false)
-  
+    const [signstatus, setsignstatus] = useState(false)
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            var uid = user?.uid;
+            if (uid) {
+                // console.log("uid is exist", uid)
+                setsignstatus(true)
+            }
+            else { console.log("uid is not exit", uid) }
+        })
+
+    }, [])
     const testing = () => {
         console.log("button is clicked")
     }
+    const logoutFunction = () => {
+        console.log("hello this is signout function")
+
+        signOut(auth)
+            .then((result) => {
+                console.log("inner sign out ")
+                setsignstatus(false)
+            })
+            .catch((err) => { console.log('hello this is error') })
+
+    }
     let navcontent = <>
         <ul className=' flex justify-between items-end  '>
-            <li>Nav2</li>
-            <li>Nav3</li>
-            <li><Link to={`/PersonDashbord`}>Hotel</Link></li>
-            <li><Link to={`/hotel`}>Dashbord</Link></li>
-            <li><Link to={`/login`}>Login</Link></li>
-            <li><Link to={`/signup`}>Sign up</Link></li>
+            <li><Link to={`/about`}>About</Link></li>
+            <li><Link to={`/blog`}>Blog</Link></li>
+            <li>Plan</li>
+            <li><Link to={`/PersonDashbord`}>Dashbord</Link></li>
+
+
+            {
+                signstatus ?
+                    <li><button onClick={logoutFunction}>Log out</button></li> :
+
+                    <> <li><Link to={`/login`}>Log in</Link></li>
+                        <li><Link to={`/signup`}>Sign up</Link></li>
+                    </>
+            }
         </ul>
     </>
     let navcontent2 = <>

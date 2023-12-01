@@ -4,7 +4,7 @@ const Popup = () => {
     return (
         <div>
             <div className="popup-container">
-              
+
             </div>
         </div>
     );

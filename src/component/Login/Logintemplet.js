@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 
 import { } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 
-import app from '../../Firebase.init';
-const auth = getAuth(app);
+import auth from '../../Firebase.init';
+// const auth = getAuth(app);
 
-const Logintemplet = ({ btntxt, findingEmail,notification,notificationtxt }) => {
+const Logintemplet = ({ btntxt, findingEmail, notification, notificationtxt }) => {
+
     const [email, setemail] = useState('')
     const value = btntxt === 'sign up' ? "Log in" : "sign up"
     const value2 = btntxt === 'sign up' ? "Log in" : "sign up"
@@ -16,17 +17,18 @@ const Logintemplet = ({ btntxt, findingEmail,notification,notificationtxt }) => 
 
     const handlegooglepopup = (event) => {
         event.preventDefault()
+
         signInWithPopup(auth, provider)
             .then((result) => {
                 const user = result.user;
-                console.log(user)
-                findingEmail(user.email,user.displayName)
+                console.log(auth)
+                findingEmail(user.email, user.displayName)
             }).catch((error) => {
 
                 console.log(error)
                 // ...
             });
-
+        console.log("email verify status : ", auth.displayName)
 
 
     }
@@ -36,6 +38,20 @@ const Logintemplet = ({ btntxt, findingEmail,notification,notificationtxt }) => 
             <h1>please {value} at frist</h1>
         </div>
     </>
+
+
+
+    const handleSignout = () => {
+        console.log("hello this is signout function")
+
+        signOut(auth)
+            .then((result) => {
+                console.log("inner sign out ")
+                console.log(auth)
+            })
+            .catch((err) => { console.log('hello this is error') })
+    }
+
     return (
         <div>
             <div>
@@ -99,7 +115,7 @@ const Logintemplet = ({ btntxt, findingEmail,notification,notificationtxt }) => 
                                     </div>
                                     <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                                         Don’t have an account yet? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">{value}
-                                        
+
                                         </a>
                                     </p>
 
@@ -109,6 +125,9 @@ const Logintemplet = ({ btntxt, findingEmail,notification,notificationtxt }) => 
                         </div>
                     </div>
                 </section>
+            </div>
+            <div>
+                <button onClick={handleSignout}>sign out</button>
             </div>
         </div>
     );
