@@ -13,13 +13,13 @@ const HotelProfil = () => {
     const commentData = (cmnt) => {
         console.log(cmnt)
     }
+    console.log(id)
     useEffect(() => {
 
         let url = `http://localhost:5000/hotel/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setdata(data))
-
 
   
     }, [])
@@ -34,7 +34,7 @@ const HotelProfil = () => {
     return (
         <div className='bg-[#F3EEEA]'>
             <div className='w-100 h-[50vh] '>
-                <Hotelprofilpart1 hoteldata={data}></Hotelprofilpart1>
+                <Hotelprofilpart1 hoteldata={data} hotalid={id}></Hotelprofilpart1>
             </div>
             <div>
                 <HotelReview hoteldata={data} commentData={id}></HotelReview>

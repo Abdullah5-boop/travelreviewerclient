@@ -49,10 +49,10 @@ const Homepagepart3 = () => {
             </a>
         </div>
         <div className='w-100  mr-1 rounded-lg  border'
-            onClick={() => { reqfortableData('UAB') }}
+            onClick={() => { reqfortableData('CA') }}
         >
             <a href="#_" class="relative block w-auto px-3 py-3 overflow-hidden    text-gray-800 rounded-lg bg-gray-50 hover:text-black hover:bg-white">
-                Dubai
+               Canada
             </a>
         </div>
 
