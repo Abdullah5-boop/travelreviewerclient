@@ -12,7 +12,7 @@ const Homepagepart3 = () => {
 
     const reqfortableData = (clickcountry) => {
         console.log(clickcountry)
-        let url = `http://localhost:5000/country/${clickcountry}`
+        let url = `http://ec2-3-135-131-209.us-east-2.compute.amazonaws.com:5000/country/${clickcountry}`
         fetch(url)
             .then(res => res.json())
             .then(data => settabledata(data))
@@ -52,7 +52,7 @@ const Homepagepart3 = () => {
             onClick={() => { reqfortableData('CA') }}
         >
             <a href="#_" class="relative block w-auto px-3 py-3 overflow-hidden    text-gray-800 rounded-lg bg-gray-50 hover:text-black hover:bg-white">
-               Canada
+                Canada
             </a>
         </div>
 

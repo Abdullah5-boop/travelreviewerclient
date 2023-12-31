@@ -16,12 +16,12 @@ const HotelProfil = () => {
     console.log(id)
     useEffect(() => {
 
-        let url = `http://localhost:5000/hotel/${id}`
+        let url = `http://ec2-3-135-131-209.us-east-2.compute.amazonaws.com:5000/hotel/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setdata(data))
 
-  
+
     }, [])
 
 

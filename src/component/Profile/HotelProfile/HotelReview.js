@@ -26,8 +26,8 @@ const HotelReview = ({ hoteldata, commentData }) => {
 
 
     const handleCmntPost = () => {
-        const url = "http://localhost:5000/reviewpost"
-        if (cmnttxt.length> 0) {
+        const url = "http://ec2-3-135-131-209.us-east-2.compute.amazonaws.com:5000/reviewpost"
+        if (cmnttxt.length > 0) {
             console.log({ commentData, cmnttxt, setemail, cmnlen: cmnttxt.length })
 
             fetch(url,
@@ -37,7 +37,7 @@ const HotelReview = ({ hoteldata, commentData }) => {
                         'Content-Type': 'application/json'
                     },
                     method: "POST",
-                    body: JSON.stringify({ email: setemail, cmnt: cmnttxt,hotleid:commentData })
+                    body: JSON.stringify({ email: setemail, cmnt: cmnttxt, hotleid: commentData })
                 })
                 .then(function (res) { console.log(res) })
                 .catch(function (res) { console.log(res) })
@@ -48,11 +48,13 @@ const HotelReview = ({ hoteldata, commentData }) => {
 
 
         else {
-            console.log({ commentData, cmnttxt, setemail, cmnlen: cmnttxt.length,text:"len 00" })
+            console.log({ commentData, cmnttxt, setemail, cmnlen: cmnttxt.length, text: "len 00" })
         }
 
 
-        window.location.reload(true);
+        setTimeout(() => {
+            window.location.reload(true);
+        }, 1500);
     }
 
     return (

@@ -8,7 +8,7 @@ const Hotelprofilpart1 = ({ hoteldata, hotalid }) => {
     const hotelstaticinfo = { HotelName, hotelPrice, hotelcnty }
     const [indetity, setindetity] = useState([]);
     useEffect(() => {
-        let url = `http://localhost:5000/identity/${hotalid}`
+        let url = `http://ec2-3-135-131-209.us-east-2.compute.amazonaws.com:5000/identity/${hotalid}`
         fetch(url)
             .then(res => res.json())
             .then(data => setindetity(data))
