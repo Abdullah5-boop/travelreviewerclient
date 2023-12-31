@@ -12,7 +12,7 @@ const ABoutUspage = () => {
                 <br />
                  " Dream, Discover: Your Gateway to Unforgettable Journeys"
 
-                Welcome to our Travel Oasis,.my name is Abdullah where every click leads you to a new adventure, and every scroll unveils the beauty of the world. As we celebrate our 1-year journey with you, we take pride in curating content that transcends boundaries and inspires the wanderlust within you.
+                Welcome to our Travel Oasis,.my name iss <span className='text-xl text-purple-500'> Abdullah</span> where every click leads you to a new adventure, and every scroll unveils the beauty of the world. As we celebrate our 1-year journey with you, we take pride in curating content that transcends boundaries and inspires the wanderlust within you.
 
 
                 <h1 className='text-3xl font-bold mt-5 font-serif'>Destinations Unveiled</h1>
