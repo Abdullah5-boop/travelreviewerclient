@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f69fc02e.css",
+    "main.js": "/static/js/main.a0ef7481.js",
+    "static/js/787.d5fa4d18.chunk.js": "/static/js/787.d5fa4d18.chunk.js",
+    "static/media/4873.jpg": "/static/media/4873.869280f3eb8651597757.jpg",
+    "static/media/maldives.jpg": "/static/media/maldives.5b7a8b030eb1ae63fbc9.jpg",
+    "static/media/card2.jpg": "/static/media/card2.76c6355e7203f1d38439.jpg",
+    "static/media/card3.jpg": "/static/media/card3.2340b8d82c51bdba0417.jpg",
+    "static/media/card1.jpg": "/static/media/card1.8d057c882f93e332fed8.jpg",
+    "index.html": "/index.html",
+    "main.f69fc02e.css.map": "/static/css/main.f69fc02e.css.map",
+    "main.a0ef7481.js.map": "/static/js/main.a0ef7481.js.map",
+    "787.d5fa4d18.chunk.js.map": "/static/js/787.d5fa4d18.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f69fc02e.css",
+    "static/js/main.a0ef7481.js"
+  ]
+}
