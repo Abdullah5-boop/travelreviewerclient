@@ -26,7 +26,7 @@ const HotelReview = ({ hoteldata, commentData }) => {
 
 
     const handleCmntPost = () => {
-        const url = "http://ec2-3-135-131-209.us-east-2.compute.amazonaws.com:5000/reviewpost"
+        const url = "http://localhost:5000/reviewpost"
         if (cmnttxt.length > 0) {
             console.log({ commentData, cmnttxt, setemail, cmnlen: cmnttxt.length })
 

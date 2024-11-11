@@ -8,7 +8,8 @@ const Hotelprofilpart1 = ({ hoteldata, hotalid }) => {
     const hotelstaticinfo = { HotelName, hotelPrice, hotelcnty }
     const [indetity, setindetity] = useState([]);
     useEffect(() => {
-        let url = `http://ec2-3-135-131-209.us-east-2.compute.amazonaws.com:5000/identity/${hotalid}`
+        let url = `http://localhost:5000
+/identity/${hotalid}`
         fetch(url)
             .then(res => res.json())
             .then(data => setindetity(data))
@@ -22,7 +23,7 @@ const Hotelprofilpart1 = ({ hoteldata, hotalid }) => {
         <>
             <div className='m-0 lg:mx-24 pt-10 lg:mb-10 grid grid-cols-1 lg:grid-cols-5'>
                 <div className='col-span-2'>
-                    <img className=' object-cover' src="https://source.unsplash.com/coconut-palm-trees-in-hotel-lobby-_dS27XGgRyQ" alt="" />
+                    <img className=' object-cover' src="https://i.ibb.co.com/Z6R9tXr/marten-bjork-n-IKQDCyr-G0-unsplash.jpg" alt="" />
                 </div>
                 <div className='ml-0 lg:ml-20 col-span-3 '>
                     <div>

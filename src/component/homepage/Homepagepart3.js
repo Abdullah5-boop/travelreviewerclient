@@ -6,13 +6,15 @@ import auth from '../../Firebase.init';
 
 const Homepagepart3 = () => {
 
-
+    useEffect(() => {
+        reqfortableData('BD')
+    }, [])
 
     const [tabledata, settabledata] = useState([])
-
     const reqfortableData = (clickcountry) => {
-        console.log(clickcountry)
-        let url = `http://ec2-3-135-131-209.us-east-2.compute.amazonaws.com:5000/country/${clickcountry}`
+
+
+        let url = `http://localhost:5000/country/${clickcountry}`
         fetch(url)
             .then(res => res.json())
             .then(data => settabledata(data))
@@ -20,38 +22,76 @@ const Homepagepart3 = () => {
     }
     const takealook = (id) => {
         let takelookobj = tabledata.find(e => e.hrid === id)
-        console.log(takelookobj)
+        // console.log(takelookobj)
 
     }
+
+    const style = {
+        // backgroundColor: 'red',
+        color:'red'
+        
+      };
+
+
+    let find_active_class = document.querySelectorAll('.onclick_class')
+    
+    find_active_class.forEach((link) => {
+     
+        link.addEventListener('click', (e) => {
+
+
+            let prevcomps= document.querySelectorAll('.onclick_class')
+            prevcomps.forEach((prevcomp)=>{
+                prevcomp.classList.remove('active')
+            })
+
+
+
+
+
+
+
+
+            link.classList.add('active')
+            console.log(link)
+        })
+        console.log(find_active_class)
+
+
+
+    })
+
+
+
 
 
 
     const navvariable = <>
-        <div className='w-100  mr-1 rounded-lg  border'
+        <div className='w-100  mr-1 rounded-lg  border onclick_class active'
             onClick={() => { reqfortableData('BD') }}
         >
-            <a href="#_" class="relative block w-auto px-3 py-3 overflow-hidden  text-gray-800 rounded-lg bg-gray-50 hover:text-black hover:bg-white">
+            <a href="#_" class="relative block w-auto px-3 py-3 overflow-hidden   rounded-lg  hover:text-black hover:bg-white">
                 Bangladesh
             </a>
         </div>
-        <div className='w-100  mr-1 rounded-lg  border'
+        <div className='w-100  mr-1 rounded-lg  border onclick_class'
             onClick={() => { reqfortableData('PAK') }}
         >
-            <a href="#_" class="relative block w-auto px-3 py-3 overflow-hidden  text-gray-800 rounded-lg bg-gray-50 hover:text-black hover:bg-white">
+            <a href="#_" class="relative block w-auto px-3 py-3 overflow-hidden   rounded-lg hover:text-black hover:bg-white">
                 Pakistan
             </a>
         </div>
-        <div className='w-100  mr-1 rounded-lg  border'
+        <div className='w-100  mr-1 rounded-lg  border onclick_class'
             onClick={() => { reqfortableData('IND') }}
         >
-            <a href="#_" class="relative block w-auto px-3 py-3 overflow-hidden    text-gray-800 rounded-lg bg-gray-50 hover:text-black hover:bg-white">
+            <a href="#_" class="relative block w-auto px-3 py-3 overflow-hidden     rounded-lg hover:text-black hover:bg-white">
                 India
             </a>
         </div>
-        <div className='w-100  mr-1 rounded-lg  border'
+        <div className='w-100  mr-1 rounded-lg  border onclick_class'
             onClick={() => { reqfortableData('CA') }}
         >
-            <a href="#_" class="relative block w-auto px-3 py-3 overflow-hidden    text-gray-800 rounded-lg bg-gray-50 hover:text-black hover:bg-white">
+            <a href="#_" class="relative block w-auto px-3 py-3 overflow-hidden     rounded-lg hover:text-black hover:bg-white">
                 Canada
             </a>
         </div>

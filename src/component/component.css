@@ -76,3 +76,11 @@
     background-size:cover;
     object-fit: cover;
 }
+.active{
+   background-color: 	rgb(59, 30, 84);
+   color:rgb(251, 251, 251)
+ 
+}
+/* .onclick_class{
+    background-color: aliceblue;
+} */

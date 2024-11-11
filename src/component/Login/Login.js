@@ -10,8 +10,9 @@ const Login = () => {
     console.log("Hello this is login page")
     const findingEmail = (email, displayName) => {
         console.log(email)
-        let url = `http://ec2-3-135-131-209.us-east-2.compute.amazonaws.com:5000/login/${email}`
-        // let url = `http://ec2-3-135-131-209.us-east-2.compute.amazonaws.com:5000/login/p01`
+        let url = `http://localhost:5000/login/${email}`
+            // let url = `http://localhost:5000
+            // login / p01`
 
 
         fetch(url)

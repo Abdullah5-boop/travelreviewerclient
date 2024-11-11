@@ -7,7 +7,22 @@ import Footer from './Footer';
 import Navpag1 from './Nav/Navpag1';
 
 const Homepage = () => {
+    const handleStorageBtn = (event) => {
+        event.preventDefault();
+        console.log('h1')
+        const Obj = { Name: "Abdullah" }
+        const array = [Obj, Obj]
+        localStorage.setItem('temp2',JSON.stringify(Obj))
+        if(localStorage.getItem('temp1'))
+       
+        {
+            console.log("exist")
+        }
+        else console.log('doesnt exist')
+        const getstorages = localStorage.getItem('temp')
+        console.log(typeof(JSON.parse(getstorages)))
 
+    }
 
     return (
 
@@ -22,9 +37,19 @@ const Homepage = () => {
             <div className=' hidden lg:block '>
                 <Homepagepart3></Homepagepart3>
             </div>
+
             <div>
-                <Footer></Footer>
+                {/* <button
+                    onClick={handleStorageBtn}
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+
+                    Button
+                </button> */}
             </div>
+            {/* <div>
+                <Footer></Footer>
+            </div> */}
+
 
         </>
     );
